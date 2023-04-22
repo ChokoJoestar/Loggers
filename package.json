@@ -1,0 +1,41 @@
+{
+   "name": "@chokojoestar/loggers",
+   "version": "1.0.0",
+   "description": "",
+   "main": "dist/index.js",
+   "types": "dist/index.d.ts",
+   "scripts": {
+      "test": "node-ts src/index.ts",
+      "complie": "tsc",
+      "link": "tsc && npm link @chokojoestar/loggers"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/ChokoJoestar/Loggers.git"
+   },
+   "keywords": [
+      "log"
+   ],
+   "author": "ChokoJoestar",
+   "license": "MIT",
+   "bugs": {
+      "url": "https://github.com/ChokoJoestar/Loggers/issues"
+   },
+   "homepage": "https://github.com/ChokoJoestar/Loggers#readme",
+   "devDependencies": {
+      "@types/node": "^18.15.13",
+      "ts-node": "^10.9.1",
+      "typescript": "^5.0.4"
+   },
+   "dependencies": {
+      "chalk": "^4.1.2",
+      "dayjs": "^1.11.7"
+   },
+   "publishConfig": {
+      "access": "public"
+   },
+   "files": [
+      "./dist",
+      "tsconfig.json"
+   ]
+}
