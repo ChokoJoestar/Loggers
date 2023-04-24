@@ -1,3 +1,3 @@
 import { Loggers } from "./Logger";
 
-export const loggers = new Loggers();
+export const log = new Loggers();

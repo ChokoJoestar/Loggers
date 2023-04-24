@@ -1,11 +1,11 @@
 {
    "name": "@chokojoestar/loggers",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "description": "",
    "main": "dist/index.js",
    "types": "dist/index.d.ts",
    "scripts": {
-      "test": "node-ts src/index.ts",
+      "test": "npm run link && npx node-ts test/index.ts && node test/index.js",
       "complie": "tsc",
       "link": "tsc && npm link @chokojoestar/loggers"
    },
@@ -24,6 +24,7 @@
    "homepage": "https://github.com/ChokoJoestar/Loggers#readme",
    "devDependencies": {
       "@types/node": "^18.15.13",
+      "node-ts": "^6.0.0",
       "ts-node": "^10.9.1",
       "typescript": "^5.0.4"
    },
@@ -35,7 +36,10 @@
       "access": "public"
    },
    "files": [
-      "./dist",
-      "tsconfig.json"
-   ]
+      "./dist/**/*",
+      "tsconfig.json",
+      "READEME.md",
+      "LICENSE"
+   ],
+   "readme": "./README.md"
 }
