@@ -19,10 +19,10 @@ npm install @chokojoestar/loggers
 
 ### Input
 ```js
-import { loggers } from '@chokojoestar/loggers';
+import { log } from '@chokojoestar/loggers';
 
-loggers.client("Hey from Client !");
-loggers.event("Hey from Event !");
+log.client("Hey from Client !");
+log.event("Hey from Event !");
 ```
 ### Output
 
