@@ -26,7 +26,7 @@ log.event("Hey from Event !");
 ```
 ### Output
 
-![Output](https://cdn.discordapp.com/attachments/942863485690322984/1099422442507747328/image.png)
+![Output](https://media.discordapp.net/attachments/942863485690322984/1101935728109305988/image.png)
 
 ## Author
  
