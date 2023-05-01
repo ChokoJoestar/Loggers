@@ -1,18 +1,12 @@
 import chalk from "chalk";
 import dayjs from "dayjs";
-import { colorBgTag, colorTag } from "./types/color";
+import { colorBgTag, colorTag, LogParms } from "../types";
 import { appendFileSync, existsSync, mkdirSync } from "fs";
 
 const format = "{timestamp} - {tag} {msg}\n";
 
-type LogParms = {
-   tagColor: colorTag;
-   bgTagColor: colorBgTag;
-   tag: string;
-   error: boolean;
-};
-
 export class Loggers {
+
    public warn(content: string): void {
       const parms: LogParms = {
          tagColor: "whiteBright",
@@ -58,7 +52,7 @@ export class Loggers {
       this.writeToFile(content, parms.tag);
    }
 
-   private writeToConsole(
+   protected writeToConsole(
       msg: string,
       parms: {
          tagColor: colorTag;
@@ -68,23 +62,20 @@ export class Loggers {
       }
    ): void {
       const steam = parms.error ? process.stderr : process.stdout;
-      const timestamp = `[${dayjs().format("DD/MM - HH:mm")}]`
+      const timestamp = `[${dayjs().format("DD/MM - HH:mm")}]`;
       const tag = `[${parms.tag}]`;
 
       const item = format
          .replace("{timestamp}", chalk.gray(timestamp))
-         .replace(
-            "{tag}",
-            chalk[parms.bgTagColor][parms.tagColor](`${tag}`)
-         )
+         .replace("{tag}", chalk[parms.bgTagColor][parms.tagColor](`${tag}`))
          .replace("{msg}", chalk.white(msg));
 
       steam.write(item);
    }
 
-   private writeToFile(content: string, tag: string) {
+   protected writeToFile(content: string, tag: string) {
       const logsDir: string = "./logs";
-      const timestamp = `[${dayjs().format("DD/MM - HH:mm")}]`
+      const timestamp = `[${dayjs().format("DD/MM - HH:mm")}]`;
       const getTag = `[${tag}]`;
 
       if (!existsSync(logsDir)) {
@@ -94,9 +85,5 @@ export class Loggers {
       const logsContent = `${timestamp} - ${getTag}: ${content}`;
 
       appendFileSync(`${logsDir}/lasted.log`, `${logsContent}\n`);
-   }
-
-   private getTag(tag: string): string {
-      return `[${tag}]`;
    }
 }

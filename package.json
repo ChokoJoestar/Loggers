@@ -23,7 +23,7 @@
    },
    "homepage": "https://github.com/ChokoJoestar/Loggers#readme",
    "devDependencies": {
-      "@types/node": "^18.15.13",
+      "@types/node": "^18.16.3",
       "ts-node": "^10.9.1",
       "typescript": "^5.0.4"
    },
@@ -36,9 +36,13 @@
    },
    "files": [
       "./dist/**/*",
+      "./types/*",
       "tsconfig.json",
       "READEME.md",
       "LICENSE"
    ],
-   "readme": "./README.md"
+   "readme": "./README.md",
+   "engines": {
+      "node": ">=16.9.0"
+   }
 }

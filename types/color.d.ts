@@ -33,3 +33,10 @@ export type colorBgTag =
    | "bgMagentaBright"
    | "bgCyanBright"
    | "bgWhiteBright";
+
+export type LogParms = {
+   tagColor: colorTag;
+   bgTagColor: colorBgTag;
+   tag: string;
+   error: boolean;
+};
