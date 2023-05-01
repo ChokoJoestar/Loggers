@@ -1,9 +1,9 @@
 {
    "name": "@chokojoestar/loggers",
-   "version": "1.0.2",
+   "version": "1.0.3",
    "description": "",
    "main": "dist/index.js",
-   "types": "dist/index.d.ts",
+   "types": "types/index.ts",
    "scripts": {
       "test": "npm run link && npm run start",
       "start": "npx ts-node test/index.test.ts && node test/index.test.js",
